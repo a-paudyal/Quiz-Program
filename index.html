@@ -1,0 +1,94 @@
+<html>
+  <head>
+     <title>Quiz</title>
+     <script>
+     var score = 0;
+     var questionCount = 0;
+     function gradeQuiz()
+     {
+       var answer = document.getElementById("answer").value;
+
+       if (questionCount == 0){
+           if (answer == 7){
+                score = score + 1;
+              }
+             document.getElementById("question").innerHTML = "What is 24 x 13 + 98?";
+
+         }
+         if (questionCount == 1){
+           if (answer == 410){
+             score = score + 1;
+           }
+           document.getElementById("question").innerHTML = "Who was the Vice President while George W. Bush was the President?";
+
+         }
+         if (questionCount == 2){
+           if (answer == "Dick Cheney"){
+             score = score + 1;
+           }
+           end();
+         }
+
+         questionCount = questionCount + 1;
+           //add one to score if it is correct
+          //add one questionCount to advance to the next question
+      }
+       function end()
+       {
+         document.getElementById("question").style.visibility = "hidden";
+         document.getElementById("answer").style.visibility = "hidden";
+         document.getElementById("button").style.visibility = "hidden";
+         document.getElementById("line").style.visibility = "hidden";
+         document.getElementById("final").innerHTML = "Your score: " + score + "/3";
+         document.getElementById("1").innerHTML = "Answer 1: 7";
+         document.getElementById("2").innerHTML = "Answer 2: 410";
+         document.getElementById("3").innerHTML = "Answer 3: Dick Cheney";
+       }
+               //Hide And Reveal Some Stuff
+     </script>
+  </head>
+
+  <body>
+    <center>
+    <h2>The World's Most Possible Game</h2>
+    <hr id = "line">
+    <span id = "question">How many continents are there?</span>
+    <input type = "text" id = "answer">
+    <input type = "button" value = "Submit Answer" onclick = "gradeQuiz()" id = "button">
+     <!--Hide or Reveal Stuff???-->
+     <hr id = "line 2">
+     <span id = "final"></span><!--hidden at beginning maybe??-->
+     <br>
+     <span id = "1"></span><!--hidden at beginning maybe??-->
+     <br>
+     <span id = "2"></span><!--hidden at beginning maybe??-->
+     <br>
+     <span id = "3"></span><!--hidden at beginning maybe??-->
+   </center>
+   <style>
+   body {
+     background-color: #ac00e6;
+     font-family: cursive;
+   }
+   hr{
+     height: 2px;
+     background-color: black;
+     border: none;
+   }
+   #button {
+     background-color: black;
+     color: #ac00e6;
+   }
+   h2 {
+     font-size: 40px;
+   }
+   span {
+     font-size: 30px;
+   }
+   #button:hover {
+     background-color: white;
+     color: #ac00e6;
+   }
+   </style>
+  </body>
+</html>
